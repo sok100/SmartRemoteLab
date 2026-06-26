@@ -111,3 +111,51 @@ The purpose of the project is interoperability and protocol documentation.
 ├── tests/
 │
 └── images/
+
+
+
+# Learn Mode
+
+One of the core features planned for SmartRemoteLab is Learn Mode.
+
+Instead of manually analyzing Bluetooth packets, users will simply run:
+
+srl learn
+
+The application will then guide the user through an interactive button discovery process.
+
+Example:
+
+Press Volume+
+
+✔ Report received:
+03 14 2A
+
+Mapped to: Volume Up
+
+--------------------------------
+
+Press Volume-
+
+✔ Report received:
+03 14 2B
+
+Mapped to: Volume Down
+
+--------------------------------
+
+Press Home
+
+✔ Report received:
+02 05 8F
+
+Mapped to: Home
+
+After all buttons have been recorded, SmartRemoteLab automatically generates a device profile such as:
+
+database/TM2360E.json
+
+The generated profile contains the Bluetooth reports associated with every button and can be reused without repeating the learning process.
+
+The goal is to build a community-driven database covering as many Samsung Smart Remote models as possible.
+
